@@ -1,0 +1,7 @@
+{
+  "main": "app://host/qml/index.html",
+  "name": "nw-videoplayer",
+  "webkit": {
+    "plugin": true
+  }
+}
