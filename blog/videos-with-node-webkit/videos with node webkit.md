@@ -71,27 +71,35 @@ Interfaces for WebChimera can be written in 2 ways:
 QML (Qt Meta Language or Qt Modeling Language) is a user interface markup language for QT applications. It is similar to CSS pimped with dynamics of JavaScript and you can write user interfaces for WebChimera with it. Let's look at a basic example. Add a file called `player.qml` to your project's root directory with the following code:
 
 ```qml
+import QtQuick 2.1
+import QtQuick.Layouts 1.0
+import QmlVlc 0.1
+
 Rectangle {
-    id: bg
+
     color: bgcolor
 
     VlcVideoSurface {
-        id: videoOutput
+
         source: vlcPlayer
         anchors.fill: parent
 
-        MouseArea {
-            anchors.fill: parent;
-            onClicked: vlcPlayer.togglePause();
-        }
-
         Rectangle {
-            id: ppBtn
-            color: 'white'
+
+            color: '#BFFFFFFF'
+            radius: 5
+            width: 220
+            height: 50
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 20
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: vlcPlayer.togglePause()
+            }
         }
     }
 }
 ```
+This will add
