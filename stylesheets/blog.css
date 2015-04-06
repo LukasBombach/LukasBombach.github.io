@@ -1,0 +1,31 @@
+/**
+ * Page styling
+ */
+body {
+    background : #fff;
+    padding    : 180px 75px;
+    font       : 1.2em/2em 'Open Sans', sans-serif;
+    color      : #4D5159;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family : 'Inconsolata', monospace;
+  line-height : 1em;
+  color       : #3B3E45; /*373a40*/
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/**
+ * Layout
+ */
+ #post {
+   max-width : 780px;
+   margin    : 0 auto;
+ }
