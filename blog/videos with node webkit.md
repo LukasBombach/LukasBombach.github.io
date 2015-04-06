@@ -1,8 +1,13 @@
 # Mac version
 
+HOW TO EMBED
+ * https://github.com/RSATom/WebChimera/issues/103#issuecomment-89377401
+ * https://github.com/jaruba/WebChimeraPlayerNW
+
 nw.js is very limited when it comes to playing video (and audio) files. [There is a tutorial](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) that helps you to play slightly more audio and video files, but the support is still very limited. You can use `WebChimera` to play videos in nw.js. WebChimera is a plugin for Chrome (and others) that uses LibVLC (?) to play videos in the browser. Cool thing you can use it in nw too! Yay. That way you can play all video formats supported in VLC in your nw application.
 
 // Research on licensing issues.
+// -> https://github.com/RSATom/WebChimera/issues/104
 
 ## Download stuff
 

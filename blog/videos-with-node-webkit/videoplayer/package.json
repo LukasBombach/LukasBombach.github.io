@@ -1,7 +1,0 @@
-{
-  "main": "app://host/index.html",
-  "name": "nw-videoplayer",
-  "webkit": {
-    "plugin": true
-  }
-}
