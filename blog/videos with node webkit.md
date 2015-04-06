@@ -123,7 +123,7 @@ Rectangle {
 }
 ```
 
-Then add a param with the name `qmlsrc` and the value `player.qml` to you `<object>` tag like this:
+Then add a param with the name `qmlsrc` and the value `player.qml` to your `<object>` tag like this:
 
 ```html
 <object type="application/x-chimera-plugin" width="600" height="338">
@@ -237,10 +237,13 @@ As mentioned in the introduction, using the techniques proposed on the nw.js wik
 ## Links
 
 WebChimera homepage
+
 http://www.webchimera.org/
 
 WebChimera on GitHub
+
 https://github.com/RSATom/WebChimera/
 
 WebChimera JavaScript API
+
 https://github.com/RSATom/WebChimera/wiki/JavaScript-API
