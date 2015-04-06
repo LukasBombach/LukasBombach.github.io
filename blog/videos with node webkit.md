@@ -232,6 +232,12 @@ If you are using Windows, you had to run the WebChimera installer to make WebChi
 
 As mentioned in the introduction, using the techniques proposed on the nw.js wiki, enabling H.264 support will require you to release your application licensed as GPL too. I.e. you must make your entire source code open-source. Luckily, using WebChimera, you don't have to do that. WebChimera itself is licensed as [LGPL-2.1](https://tldrlegal.com/license/gnu-lesser-general-public-license-v2.1-(lgpl-2.1)), but since this is a standalone library, only the library needs to be public. Your code can stay closed using the license that you choose.
 
+## Download / Demo
+
+You can download the entire code of this project from
+
+https://github.com/LukasBombach/nw-webchimera-demos
+
 ## Links
 
 WebChimera homepage
