@@ -8,6 +8,11 @@ body {
     color      : #4D5159;
 }
 
+a {
+  color: #fd6c5d;
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family : 'Inconsolata', monospace;
   line-height : 1em;
@@ -20,6 +25,20 @@ h1 {
 
 h2 {
   font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+*::selection {
+    background : #fd6c5d;
+    color: #fff;
+}
+
+*::-moz-selection {
+    background : #fd6c5d;
+    color: #fff;
 }
 
 /**

@@ -2,7 +2,7 @@
 title: How to play almost all video files in nw.js (node-webkit)
 layout: post
 ---
-# How to play almost all video files in nw.js (node-webkit)
+# How to play almost all video files in nw.js<br/>(node-webkit)
 
 Playing video files using nw.js out-of-the-box is very limited. The list of supported codecs
 
@@ -14,7 +14,7 @@ seems quite impressive, but when you start playing videos with nw you quickly re
 
 You can download the final project from GitHub, the code is quite simple:
 
-https://github.com/LukasBombach/nw-webchimera-demos
+[https://github.com/LukasBombach/nw-webchimera-demos](https://github.com/LukasBombach/nw-webchimera-demos)
 
 ## WebChimera
 
@@ -138,7 +138,7 @@ Then add a param with the name `qmlsrc` and the value `player.qml` to your `<obj
 {% endhighlight %}
 
 
-This will add a rounded rectangle at the bottom of your player, click it to pause and unpause the video. This tutorial should not be about how to write QML, but the basics are that QML contains of nested objects, in this case a `VlcVideoSurface` containing a `Rectangle` containing a `MouseArea`. Each object can reference its parent and using the `anchor` attributes position itself relative to it. You can find a very nice article explaining the basics of writing QML on WebChimera's wiki on GitHub: https://github.com/RSATom/WebChimera/wiki/Getting-started-with-QML
+This will add a rounded rectangle at the bottom of your player, click it to pause and unpause the video. This tutorial should not be about how to write QML, but the basics are that QML contains of nested objects, in this case a `VlcVideoSurface` containing a `Rectangle` containing a `MouseArea`. Each object can reference its parent and using the `anchor` attributes position itself relative to it. You can find a very nice article explaining the basics of writing QML on WebChimera's wiki on GitHub: [https://github.com/RSATom/WebChimera/wiki/Getting-started-with-QML](https://github.com/RSATom/WebChimera/wiki/Getting-started-with-QML)
 
 ## Implementing an interface using HTML, CSS & JavaScript
 
@@ -248,10 +248,10 @@ As mentioned in the introduction, using the techniques proposed on the nw.js wik
 ## Links
 
 WebChimera homepage
-http://www.webchimera.org/
+[http://www.webchimera.org/](http://www.webchimera.org/)
 
 WebChimera on GitHub
-https://github.com/RSATom/WebChimera/
+[https://github.com/RSATom/WebChimera/](https://github.com/RSATom/WebChimera/)
 
 WebChimera JavaScript API
-https://github.com/RSATom/WebChimera/wiki/JavaScript-API
+[https://github.com/RSATom/WebChimera/wiki/JavaScript-API](https://github.com/RSATom/WebChimera/wiki/JavaScript-API)
