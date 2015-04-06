@@ -1,3 +1,22 @@
+# How to play almost all video files in nw.js (node-webkit)
+
+Playing video files using nw.js out-of-the-box is very limited. The list of supported codecs
+
+```
+theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
+```
+seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw.
+
+## WebChimera
+
+WebChimera is a plugin that uses [Firebreath](http://www.firebreath.org/) to run [VLC](http://www.videolan.org/) in your browser—and it works quite well. The best part is, you can use this plugin together with nw.js to fill the gap of unsupported videos and actually play almost all videos in your nw application.
+
+Once WebChimera is installed, you can simply add an html-tag for your video, provide it with a video source, local or remote, and play the video embedded in your page. You can either write interfaces for it using HTML, CSS & JavaScript—or use QML, the language to write interfaces for QT applications.
+
+Since WebChimera runs VLC you will also be able to play almost any audio files, like mp3, with it.
+
+## Set up
+
 # Mac version
 
 HOW TO EMBED
@@ -108,3 +127,13 @@ Rectangle {
 }
 ```
 This will add
+
+
+
+## Links
+
+WebChimera homepage
+http://www.webchimera.org/
+
+WebChimera on GitHub
+https://github.com/RSATom/WebChimera/
