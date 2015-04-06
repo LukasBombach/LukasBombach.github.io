@@ -5,7 +5,7 @@ Playing video files using nw.js out-of-the-box is very limited. The list of supp
 ```
 theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
 ```
-seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw.
+seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw. Also, using the techniques described, you will need to license your application as `GPL`, i.e. make your project open-source. Using WebChimera you don't have to do that.
 
 ## WebChimera
 
@@ -15,25 +15,17 @@ Once WebChimera is installed, you can simply add an html-tag for your video, pro
 
 Since WebChimera runs VLC you will also be able to play almost any audio files, like mp3, with it.
 
-## Set up
+## Install nw.js and WebChimera
 
-# Mac version
+To get started, first [download the latest nw.js](https://github.com/nwjs/nw.js#downloads), `x64` for OS X, `ia32` for Windows, and extract it. Then [download WebChimera](http://www.webchimera.org/download) for your platform.
 
-HOW TO EMBED
- * https://github.com/RSATom/WebChimera/issues/103#issuecomment-89377401
- * https://github.com/jaruba/WebChimeraPlayerNW
+### For OS X
+In your nw root directory (where you will place your `package.json`) create a folder called `plugins`. Open the WebChimera `.dmg` you just downloaded and copy the `WebChimera.plugin` file to that folder.
 
-nw.js is very limited when it comes to playing video (and audio) files. [There is a tutorial](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) that helps you to play slightly more audio and video files, but the support is still very limited. You can use `WebChimera` to play videos in nw.js. WebChimera is a plugin for Chrome (and others) that uses LibVLC (?) to play videos in the browser. Cool thing you can use it in nw too! Yay. That way you can play all video formats supported in VLC in your nw application.
+### For Windows
+Simply use the WebChimera installer you just downloaded and install WebChimera globally. nw.js automatically has access to all plugins installed for your browser, so installing WebChimera like this will also make any nw application able to use it. Don't worry, when you ship your nw application, you can ship WebChimera with it *without* requiring your users to install anything. [@jaruba](https://github.com/jaruba) has set up [a repository](https://github.com/jaruba/WebChimeraPlayerNW) to help you do that. But more on that later.
 
-// Research on licensing issues.
-// -> https://github.com/RSATom/WebChimera/issues/104
-
-## Download stuff
-
-1. [Download the latest nw.js](https://github.com/nwjs/nw.js/) (formerly known as node-webkit) * 32 / 64 bit überprüfen
-2. [Download the latest WebChimera](http://www.webchimera.org/download) (GitHub [here](https://github.com/RSATom/WebChimera/))
-
-## Set up project
+## Set up your project
 
 1. Extract nw.js
 2. In your nw root folder create a folder called "plugins".
@@ -128,6 +120,8 @@ Rectangle {
 ```
 This will add
 
+## Licensing
+// -> https://github.com/RSATom/WebChimera/issues/104
 
 
 ## Links
