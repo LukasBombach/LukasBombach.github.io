@@ -7,6 +7,8 @@ theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
 ```
 seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw. Also, using the techniques described, you will need to license your application as `GPL`, i.e. make your project open-source. Using WebChimera you don't have to do that.
 
+## Download / Demo
+
 You can download the final project from GitHub:
 
 https://github.com/LukasBombach/nw-webchimera-demos
@@ -231,12 +233,6 @@ If you are using Windows, you had to run the WebChimera installer to make WebChi
 ## Licensing
 
 As mentioned in the introduction, using the techniques proposed on the nw.js wiki, enabling H.264 support will require you to release your application licensed as GPL too. I.e. you must make your entire source code open-source. Luckily, using WebChimera, you don't have to do that. WebChimera itself is licensed as [LGPL-2.1](https://tldrlegal.com/license/gnu-lesser-general-public-license-v2.1-(lgpl-2.1)), but since this is a standalone library, only the library needs to be public. Your code can stay closed using the license that you choose.
-
-## Download / Demo
-
-You can download the entire code of this project from
-
-https://github.com/LukasBombach/nw-webchimera-demos
 
 ## Links
 
