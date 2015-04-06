@@ -3,7 +3,7 @@
  */
 body {
     background : #fff;
-    padding    : 180px 75px;
+    padding    : 180px 75px 50px 75px;
     font       : 1.2em/2em 'Open Sans', sans-serif;
     color      : #4D5159;
 }
@@ -47,9 +47,14 @@ h3 {
 /**
  * Layout
  */
- #post {
+ #post, #footer {
    max-width : 780px;
    margin    : 0 auto;
+ }
+
+ #footer {
+   margin-top: 100px;
+   color: #646973;
  }
 
  @media only screen and (max-width : 736px) {

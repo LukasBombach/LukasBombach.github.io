@@ -247,11 +247,11 @@ As mentioned in the introduction, using the techniques proposed on the nw.js wik
 
 ## Links
 
-WebChimera homepage
+WebChimera homepage<br/>
 [http://www.webchimera.org/](http://www.webchimera.org/)
 
-WebChimera on GitHub
+WebChimera on GitHub<br/>
 [https://github.com/RSATom/WebChimera/](https://github.com/RSATom/WebChimera/)
 
-WebChimera JavaScript API
+WebChimera JavaScript API<br/>
 [https://github.com/RSATom/WebChimera/wiki/JavaScript-API](https://github.com/RSATom/WebChimera/wiki/JavaScript-API)
