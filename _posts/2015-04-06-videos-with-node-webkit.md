@@ -64,6 +64,7 @@ Once you have extracted nw.js and installed WebChimera we can start creating a s
 
 ### On Windows
 
+{% highlight javascript %}
 {
   "name": "nw-webchimera-demos",
   "main": "app://host/index.html",
@@ -72,6 +73,8 @@ Once you have extracted nw.js and installed WebChimera we can start creating a s
     "plugin": true
   }
 }
+{% endhighlight %}
+
 
 This contains 3 important settings. Let's start by looking at
 
