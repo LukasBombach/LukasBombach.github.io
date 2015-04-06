@@ -6,9 +6,8 @@ layout: post
 
 Playing video files using nw.js out-of-the-box is very limited. The list of supported codecs
 
-```
 theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
-```
+
 seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw. Also, using the techniques described, you will need to license your application as `GPL`, i.e. make your project open-source. Using WebChimera you don't have to do that.
 
 ## Download / Demo / tl;dr
@@ -39,7 +38,7 @@ Simply use the WebChimera installer you just downloaded and install WebChimera g
 
 Once you have extracted nw.js and installed WebChimera you can start creating your actual application. First, create a `package.json` in you project root as follows:
 
-```javascript
+{% highlight javascript %}
 {
   "name": "nw-webchimera",
   "main": "app://host/index.html",
@@ -47,23 +46,23 @@ Once you have extracted nw.js and installed WebChimera you can start creating yo
     "plugin": true
   }
 }
-```
+{% endhighlight %}
 
 This contains 2 important settings. Let's look at
 
-```javascript
+{% highlight javascript %}
 "webkit": {
   "plugin": true
 }
-```
+{% endhighlight %}
 
 first. This setting will make `nw` look for plugins in the `plugins` folder of your project and ultimately load `WebChimera`. This is not required for Windows applications at this point, but if you want to ship cross-plattform applications you should do this.
 
 Secondly
 
-```javascript
+{% highlight javascript %}
 "main": "app://host/index.html",
-```
+{% endhighlight %}
 
 will enable `nw` load files locally. This will be important when we implement the interface for the video player using QML, since we wil put the QML code in a separate file that `nw` needs to load from the file system.
 
@@ -71,7 +70,7 @@ will enable `nw` load files locally. This will be important when we implement th
 
 Create a file called `index.html` in your root directory:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <body>
@@ -80,7 +79,8 @@ Create a file called `index.html` in your root directory:
 </object>
 </body>
 </html>
-```
+{% endhighlight %}
+
 
 Open your `nw` app. Boom. You already have a video player application that supports all files that are supported by VLC.
 
@@ -95,7 +95,7 @@ Interfaces for WebChimera can be written in 2 ways:
 
 QML (Qt Meta Language or Qt Modeling Language) is a user interface markup language for QT applications. It is similar to CSS pimped with dynamics of JavaScript and you can write user interfaces for WebChimera with it. Let's look at a basic example. Add a file called `player.qml` to your project's root directory with the following code:
 
-```qml
+{% highlight qml %}
 import QtQuick 2.1
 import QmlVlc 0.1
 
@@ -125,16 +125,18 @@ Rectangle {
         }
     }
 }
-```
+{% endhighlight %}
+
 
 Then add a param with the name `qmlsrc` and the value `player.qml` to your `<object>` tag like this:
 
-```html
+{% highlight html %}
 <object type="application/x-chimera-plugin" width="600" height="338">
     <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
     <param name="qmlsrc" value="player.qml" />
 </object>
-```
+{% endhighlight %}
+
 
 This will add a rounded rectangle at the bottom of your player, click it to pause and unpause the video. This tutorial should not be about how to write QML, but the basics are that QML contains of nested objects, in this case a `VlcVideoSurface` containing a `Rectangle` containing a `MouseArea`. Each object can reference its parent and using the `anchor` attributes position itself relative to it. You can find a very nice article explaining the basics of writing QML on WebChimera's wiki on GitHub: https://github.com/RSATom/WebChimera/wiki/Getting-started-with-QML
 
@@ -144,24 +146,26 @@ Implementing an interface for WebChimera using HTML, CSS & JavaScript is as stra
 
 If you have just modified your `<object>` code, undo your changes. So your `<object>` tag should look like this again:
 
-```html
+{% highlight html %}
 <object type="application/x-chimera-plugin" width="600" height="338">
     <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
 </object>
-```
+{% endhighlight %}
+
 
 Right after your `<object>`, create a div with the id `interface`:
 
-```html
+{% highlight html %}
 <object type="application/x-chimera-plugin" width="600" height="338">
     <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
 </object>
 <div id="interface"></div>
-```
+{% endhighlight %}
+
 
 Add the following CSS to your page:
 
-```html
+{% highlight html %}
 <style>
 #interface {
     position: absolute;
@@ -173,21 +177,23 @@ Add the following CSS to your page:
     border-radius: 5px;
 }
 </style>
-```
+{% endhighlight %}
+
 And *at the bottom* of your `<body>`:
 
-```html
+{% highlight html %}
 <script type="text/javascript">
     var player = document.getElementById('player');
     document.getElementById('interface').addEventListener('click', function() {
         player.togglePause();
     });
 </script>
-```
+{% endhighlight %}
+
 
 which should give you the following HTML page
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -220,7 +226,8 @@ which should give you the following HTML page
 
 </body>
 </html>
-```
+{% endhighlight %}
+
 
 So simply put, we added a `<div>` to our markup, styled it with CSS to lay it over our video and called the `togglePause()` method of the video player when the user clicks it. You should see a white, slightly transparent rounded rectangle overlaying the video and pause/unpause it by clicking on it. This way you can build any interface you want using the web-technlogy you are familiar with.
 
