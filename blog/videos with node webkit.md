@@ -237,13 +237,10 @@ As mentioned in the introduction, using the techniques proposed on the nw.js wik
 ## Links
 
 WebChimera homepage
-
 http://www.webchimera.org/
 
 WebChimera on GitHub
-
 https://github.com/RSATom/WebChimera/
 
 WebChimera JavaScript API
-
 https://github.com/RSATom/WebChimera/wiki/JavaScript-API
