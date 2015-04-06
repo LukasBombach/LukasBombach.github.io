@@ -7,6 +7,10 @@ theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
 ```
 seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any videos are actually working. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw. Also, using the techniques described, you will need to license your application as `GPL`, i.e. make your project open-source. Using WebChimera you don't have to do that.
 
+You can download the final project from GitHub:
+
+https://github.com/LukasBombach/nw-webchimera-demos
+
 ## WebChimera
 
 WebChimera is a plugin that uses [Firebreath](http://www.firebreath.org/) to run [VLC](http://www.videolan.org/) in your browser—and it works quite well. The best part is, you can use this plugin together with nw.js to fill the gap of unsupported videos and actually play almost all videos in your nw application.
@@ -27,14 +31,11 @@ Simply use the WebChimera installer you just downloaded and install WebChimera g
 
 ## Set up your project
 
-1. Extract nw.js
-2. In your nw root folder create a folder called "plugins".
-3. Open your WebChimera download and put `WebChimera.plugin` in the "plugins" folder you just created.
-4. In your project root, create a `package.json` as follows
+Once you have extracted nw.js and installed WebChimera you can start creating your actual application. First, create a `package.json` in you project root as follows:
 
 ```javascript
 {
-  "name": "nw-videoplayer",
+  "name": "nw-webchimera",
   "main": "app://host/index.html",
   "webkit": {
     "plugin": true
@@ -50,23 +51,25 @@ This contains 2 important settings. Let's look at
 }
 ```
 
-first. This setting will make `nw` look for plugins in the `plugins` folder and ultamately load `WebChimera`. Second of all
+first. This setting will make `nw` look for plugins in the `plugins` folder of your project and ultimately load `WebChimera`. This is not required for Windows applications at this point, but if you want to ship cross-plattform applications you should do this.
+
+Secondly
 
 ```javascript
 "main": "app://host/index.html",
 ```
 
-will make `nw` load local files. This will be important because we will implement the interface for the video player in a separate file that `nw` needs to load from the local file system.
+will enable `nw` load files locally. This will be important when we implement the interface for the video player using QML, since we wil put the QML code in a separate file that `nw` needs to load from the file system.
 
 ## Instantiate video player
 
-Create a file called `index.html`
+Create a file called `index.html` in your root directory:
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
-<object id="plugin_inst_1" type="application/x-chimera-plugin" width="600" height="338">
+<object type="application/x-chimera-plugin" width="600" height="338">
     <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
 </object>
 </body>
@@ -80,7 +83,7 @@ Open your `nw` app. Boom. You already have a video player application that suppo
 Interfaces for WebChimera can be written in 2 ways:
 
  * Using QML
- * Using HTML / CSS / JavaScript
+ * Using HTML, CSS & JavaScript
 
 ## Implementing an interface with QML
 
@@ -88,7 +91,6 @@ QML (Qt Meta Language or Qt Modeling Language) is a user interface markup langua
 
 ```qml
 import QtQuick 2.1
-import QtQuick.Layouts 1.0
 import QmlVlc 0.1
 
 Rectangle {
@@ -118,11 +120,22 @@ Rectangle {
     }
 }
 ```
-This will add
+
+Then add a param with the name `qmlsrc` and the value `player.qml` to you `<object>` tag like this:
+
+```html
+<object type="application/x-chimera-plugin" width="600" height="338">
+    <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
+    <param name="qmlsrc" value="player.qml" />
+</object>
+```
+
+This will add a rounded rectangle at the bottom of your player, click it to pause and unpause the video. This tutorial should not be about how to write QML, but the basics are that QML contains of nested objects, in this case a `VlcVideoSurface` containing a `Rectangle` containing a `MouseArea`. Each object can reference its parent and using the `anchor` attributes position itself relative to it. You can find a very nice article explaining the basics of writing QML on WebChimera's wiki on GitHub: https://github.com/RSATom/WebChimera/wiki/Getting-started-with-QML
+
+## Implementing an interface using HTML, CSS & JavaScript
 
 ## Licensing
 // -> https://github.com/RSATom/WebChimera/issues/104
-
 
 ## Links
 
