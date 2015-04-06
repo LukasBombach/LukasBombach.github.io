@@ -4,11 +4,13 @@ layout: post
 ---
 # How to play almost all video files in nw.js<br/>(node-webkit)
 
-Playing video files using nw.js out-of-the-box is very limited. The list of supported codecs
+The range of video formats you can play with nw.js out-of-the-box is very limited. The list of supported codecs
 
     theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
 
-seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any video is actually playing. Especially H.264 encoded files, one of the most popular codecs, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail on nw. Also, using the techniques described, you will need to license your application as `GPL`, i.e. make your project open-source. Using WebChimera, you won't have to do that.
+seems quite impressive, but when you start playing videos with nw you quickly realize that hardly any video is actually working. Especially files encoded with H.264, probably the most popular codec, is not supported. nw offers [a wiki page](https://github.com/nwjs/nw.js/wiki/Using-MP3-&-MP4-%28H.264%29-using-the--video--&--audio--tags.) explaining how to make H.264 work, but most video files still fail to play. Also, using the techniques described, you will have to license your application as `GPL`, in other words you must make your project open-source.
+
+A solution to all of these problems is using WebChimera, a plugin you can use with nw.js.
 
 ## Download / Demo / tl;dr
 
@@ -19,19 +21,29 @@ You can download the final project from GitHub, the code is quite simple:<br />
 
 WebChimera is a plugin that uses [Firebreath](http://www.firebreath.org/) to run [VLC](http://www.videolan.org/) in your browser—and it works quite well. The best part is, you can use this plugin together with nw.js to fill the gap of unsupported videos and actually play almost all videos in your nw application.
 
-Once WebChimera is installed, you can simply add an html-tag for your video, provide it with a video source, local or remote, and play the video embedded in your page. You can either write interfaces for it using HTML, CSS & JavaScript—or use QML, the language to write interfaces for QT applications.
+Once WebChimera is installed, you can simply add an html-tag for your video, provide it with a video source (local or remote) and play the video embedded in your page. You can either write interfaces for it using QML, the language to write interfaces for QT applications—or HTML, CSS & JavaScript, the languages you probably already know and love.
 
-Since WebChimera runs VLC you will also be able to play almost any audio files, like mp3, with it.
+Since WebChimera runs VLC, you will also be able to play almost any audio file, like MP3s, AACs and many more, with it.
 
 ## Install nw.js and WebChimera
 
-To get started, first [download the latest nw.js](https://github.com/nwjs/nw.js#downloads), `x64` for OS X, `ia32` for Windows, and extract it. Then [download WebChimera](http://www.webchimera.org/download) for your platform.
+### On OS X
 
-### For OS X
-In your nw root directory (where you will place your `package.json`) create a folder called `plugins`. Open the WebChimera `.dmg` you just downloaded and copy the `WebChimera.plugin` file to that folder.
+1. [Download nw.js](https://github.com/nwjs/nw.js/#downloads), choose the `64bit` version and extract it.
+2. [Download WebChimera](http://www.webchimera.org/download) for Mac
+3. Create a folder called `plugins` in your nw project root.
+4. From your downloaded WebChimera disk image, copy the file `WebChimera.plugin` to the `plugins` folder you just created.
 
-### For Windows
-Simply use the WebChimera installer you just downloaded and install WebChimera globally. nw.js automatically has access to all plugins installed for your browser, so installing WebChimera like this will also make any nw application able to use it. Don't worry, when you ship your nw application, you can ship WebChimera with it *without* requiring your users to install anything. [@jaruba](https://github.com/jaruba) has set up [a repository](https://github.com/jaruba/WebChimeraPlayerNW) to help you do that. But more on that later.
+### On Windows
+
+1. [Download nw.js](https://github.com/nwjs/nw.js/#downloads), choose the `32bit` version and extract it.
+2. [Download the latest WebChimera from the releases at GitHub](https://github.com/RSATom/WebChimera/releases). Choose the file named WebChimera_X.X.X_vlc_X.X.X.zip
+3. Create a folder called `plugins` in your nw project root.
+4. Extract all contents from the WebChimera zip file you downloaded to the `plugins` folder you just created.
+
+### Linux
+
+Unfortunately Linux is not fully supported—*yet*.
 
 ## Set up your project
 
