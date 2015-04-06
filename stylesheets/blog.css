@@ -8,6 +8,12 @@ body {
     color      : #4D5159;
 }
 
+@media only screen and (max-device-width : 736px) and (orientation : portrait) {
+    body{
+        font-size: 2em;
+    }
+}
+
 a {
   color: #fd6c5d;
   text-decoration: none;
