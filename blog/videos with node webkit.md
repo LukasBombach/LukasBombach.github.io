@@ -134,8 +134,93 @@ This will add a rounded rectangle at the bottom of your player, click it to paus
 
 ## Implementing an interface using HTML, CSS & JavaScript
 
+Implementing an interface for WebChimera using HTML, CSS & JavaScript is as straight forward as creating the interface elements using HTML & CSS and using JavaScript to make WebChimera pause and play when the user performs a click. WebChimera [has a JavaScript API](https://github.com/RSATom/WebChimera/wiki/JavaScript-API) that gives you full control over the video.
+
+If you have just modified your `<object>` code, undo your changes. So your `<object>` tag should look like this again:
+
+```html
+<object type="application/x-chimera-plugin" width="600" height="338">
+    <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
+</object>
+```
+
+Right after your `<object>`, create a div with the id `interface`:
+
+```html
+<object type="application/x-chimera-plugin" width="600" height="338">
+    <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
+</object>
+<div id="interface"></div>
+```
+
+Add the following CSS to your page:
+
+```html
+<style>
+#interface {
+    position: absolute;
+    top: 268px;
+    left: 190px;
+    width: 220px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+</style>
+```
+And *at the bottom* of your `<body>`:
+
+```html
+<script type="text/javascript">
+    var player = document.getElementById('player');
+    document.getElementById('interface').addEventListener('click', function() {
+        player.togglePause();
+    });
+</script>
+```
+
+which should give you the following HTML page
+
+```html
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        #interface {
+            position: absolute;
+            top: 268px;
+            left: 190px;
+            width: 220px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<object id="player" type="application/x-chimera-plugin" width="600" height="338">
+    <param name="mrl" value="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.avi" />
+</object>
+<div id="interface"></div>
+
+<script type="text/javascript">
+    var player = document.getElementById('player');
+    document.getElementById('interface').addEventListener('click', function() {
+        player.togglePause();
+    });
+</script>
+
+</body>
+</html>
+```
+
+So simply put, we added a `<div>` to our markup, styled it with CSS to lay it over our video and called the `togglePause()` method of the video player when the user clicks it. You should see a white, slightly transparent rounded rectangle overlaying the video and pause/unpause it by clicking on it. This way you can build any interface you want using the web-technlogy you are familiar with.
+
 ## Licensing
-// -> https://github.com/RSATom/WebChimera/issues/104
+
+As mentioned in the
 
 ## Links
 
@@ -144,3 +229,6 @@ http://www.webchimera.org/
 
 WebChimera on GitHub
 https://github.com/RSATom/WebChimera/
+
+WebChimera JavaScript API
+https://github.com/RSATom/WebChimera/wiki/JavaScript-API
