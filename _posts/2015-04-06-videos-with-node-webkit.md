@@ -1,3 +1,7 @@
+---
+title: How to play almost all video files in nw.js (node-webkit)
+layout: post
+---
 # How to play almost all video files in nw.js (node-webkit)
 
 Playing video files using nw.js out-of-the-box is very limited. The list of supported codecs
