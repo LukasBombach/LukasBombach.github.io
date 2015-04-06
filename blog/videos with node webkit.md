@@ -218,9 +218,19 @@ which should give you the following HTML page
 
 So simply put, we added a `<div>` to our markup, styled it with CSS to lay it over our video and called the `togglePause()` method of the video player when the user clicks it. You should see a white, slightly transparent rounded rectangle overlaying the video and pause/unpause it by clicking on it. This way you can build any interface you want using the web-technlogy you are familiar with.
 
+## Shipping your application
+
+### OS X
+
+Distributing your application for OS X is quite simple. Just include the `WebChimera.plugin` in you `plugins` folder and everything works out-of-the-box.
+
+### Windows
+
+If you are using Windows, you had to run the WebChimera installer to make WebChimera work. Of course you don't want your users to install your application—and WebChimera. Don't worry, this can be done. Jaruba has set up a GitHub repository explaining how to ship your application as "standalone", including all WebChimera files that are required. [You can find the repository here](https://github.com/jaruba/WebChimeraPlayerNW). I am pretty sure this will be easier in the future.
+
 ## Licensing
 
-As mentioned in the
+As mentioned in the introduction, using the techniques proposed on the nw.js wiki, enabling H.264 support will require you to release your application licensed as GPL too. I.e. you must make your entire source code open-source. Luckily, using WebChimera, you don't have to do that. WebChimera itself is licensed as [LGPL-2.1](https://tldrlegal.com/license/gnu-lesser-general-public-license-v2.1-(lgpl-2.1)), but since this is a standalone library, only the library needs to be public. Your code can stay closed using the license that you choose.
 
 ## Links
 
