@@ -12,8 +12,7 @@ seems quite impressive, but when you start playing videos with nw you quickly re
 
 ## Download / Demo / tl;dr
 
-You can download the final project from GitHub, the code is quite simple:
-
+You can download the final project from GitHub, the code is quite simple:<br />
 [https://github.com/LukasBombach/nw-webchimera-demos](https://github.com/LukasBombach/nw-webchimera-demos)
 
 ## WebChimera
