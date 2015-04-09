@@ -42,6 +42,10 @@ h3 {
   margin: 1.2em 0 -0.2em 0;
 }
 
+p {
+  text-align: justify;
+}
+
 *::selection {
     background : #fd6c5d;
     color: #fff;
