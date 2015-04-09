@@ -15,8 +15,8 @@ body {
 }
 
 a {
-  color: #fd6c5d;
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
   word-wrap: break-word;
 }
 
