@@ -4,6 +4,9 @@ layout: post
 ---
 # How to play almost all video files in nw.js<br/>(node-webkit)
 
+![Alt text](/images/posts/2015-04-06-videos-with-node-webkit/movie-player-windowed.jpg)
+
+
 The range of video formats you can play with nw.js out-of-the-box is very limited. The list of supported codecs
 
     theora,vorbis,vp8,pcm_u8,pcm_s16le,pcm_s24le,pcm_f32le,pcm_s16be,pcm_s24be
