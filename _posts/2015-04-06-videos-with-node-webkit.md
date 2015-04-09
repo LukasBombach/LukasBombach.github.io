@@ -2,7 +2,7 @@
 title: How to play almost all video files in nw.js (node-webkit)
 layout: post
 ---
-# How to play almost all video files in nw.js<br/>(node-webkit)
+# How to play<br>almost all video files<br>in nw.js (node-webkit)
 
 ![Alt text](/images/posts/2015-04-06-videos-with-node-webkit/movie-player-windowed.jpg)
 
