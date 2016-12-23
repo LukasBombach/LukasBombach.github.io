@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lukas Bombach</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #symbols, #text {
+            position: absolute;
+            overflow: hidden;
+            padding: 0 30px;
+            width: calc(100% - 60px);
+            height: 100%;
+
+        }
+
+        #text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #intro, #links {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 28px;
+            color: #373A40;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        *::selection {
+            background: #924ED8;
+            color: #fff;
+        }
+        *::-moz-selection {
+            background: #924ED8;
+            color: #fff;
+        }
+
+        #links a {
+            text-decoration: none;
+        }
+
+        .text-bg {
+            background: rgba(255, 255, 255, 0.45);
+        }
+        
+        .my-name {
+            color: #924ED8;
+        }
+
+        .twitter {
+            color: #55ACEE;
+        }
+
+        .github {
+            color: #333333;
+        }
+
+        .dribbble {
+            color: #EA4C89;
+        }
+
+        .xing {
+            color: #DAE430;
+        }
+
+        .linkedin {
+            color: #1884BB;
+        }
+
+        .symbol {
+            position: absolute;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 24px;
+            color: #dfdfdf;
+            opacity: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            animation-duration: 0.3s;
+            animation-name: pop-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes pop-out {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            75% {
+                opacity: 0.75;
+                transform: scale(1.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+</head>
+<body>
+
+<div id="symbols"></div>
+
+<div id="text">
+    <p id="intro">
+        <span class="text-bg">
+            Hi, my name is <span class="my-name">Lukas Bombach</span>,
+            I work as a front end developer at Die Welt in Berlin.
+        </span>
+    </p>
+    <p id="links">
+        <span class="text-bg">
+            You can find me on
+            <a href="https://twitter.com/luke_schmuke" class="twitter">Twitter</a>,
+            <a href="https://github.com/LukasBombach/" class="github">GitHub</a>,
+            <a href="https://dribbble.com/luke_schmuke" class="dribbble">Dribbble</a>,
+            <a href="https://www.xing.com/profile/Lukas_Bombach" class="xing">XING</a> and
+            <a href="https://www.linkedin.com/in/lukas-bombach-010b8196" class="linkedin">LinkedIn</a>.
+        </span>
+    </p>
+</div>
+
+<script>
+    (function () {
+
+        var container = document.getElementById('symbols');
+        var symbols = '# * + () / & = ? $ {} !! /**/ $ %'.split(' ');
+        var symbolClass = 'symbol';
+        var spread = 150;
+        var border = 20;
+
+        var containerWidth = container.offsetWidth;
+        var containerHeight = container.offsetHeight;
+
+        //for (var h = 0, i = 0; h < containerHeight; h += spread + border, i++) {
+        for (var h = containerHeight, i = 0; h > containerHeight * -1; h -= spread + border, i++) {
+            for (var w = 0, j = 0; w < containerWidth; w += spread + border, j++) {
+                var el = document.createElement('span');
+                el.className = symbolClass;
+                el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+                el.style.top = h + Math.random() * spread + 'px';
+                el.style.left = w + Math.random() * spread + 'px';
+                el.style.animationDelay = (i + j) * 0.05 + 's';
+                container.appendChild(el);
+            }
+        }
+
+    })();
+</script>
+</body>
+</html>
